@@ -1,5 +1,6 @@
 const fs = require("fs");
-const mock = fs.readFileSync("text.txt", "utf8");
+const path = require("path");
+const input = fs.readFileSync(path.join(__dirname, "input.txt"), "utf8");
 
 function getMultiplicationsWithCondition(data) {
   const regex = /(mul\(\d+,\d+\)|do\(\)|don\'t\(\))/g;
@@ -24,4 +25,4 @@ function getMultiplicationsWithCondition(data) {
   return result;
 }
 
-console.log("result: ", getMultiplicationsWithCondition(mock));
+console.log("result: ", getMultiplicationsWithCondition(input));

@@ -1,5 +1,6 @@
 const fs = require("fs");
-const mock = fs.readFileSync("text.txt", "utf8");
+const path = require("path");
+const input = fs.readFileSync(path.join(__dirname, "input.txt"), "utf8");
 
 function getMultiplications(data) {
   const regex = /mul\((\d*,\d*)\)/g;
@@ -24,4 +25,4 @@ function getMultiplications(data) {
   return result;
 }
 
-console.log('result: ', getMultiplications(mock));
+console.log('result: ', getMultiplications(input));
